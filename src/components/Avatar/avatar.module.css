@@ -1,0 +1,138 @@
+/*AVATAR*/
+.avatarContainer {
+   margin-top: -10px;
+   background-color: #fff;
+   padding-bottom: 20px;
+}
+.avatarContainer h5 {
+   font-family: "Fredoka One", cursive;
+   font-size: 20px;
+   color: #242424;
+   letter-spacing: 1px;
+   text-align: center;
+}
+.avatarBg {
+   width: 135px;
+   height: 135px;
+   margin: 0 auto;
+   position: relative;
+   border-radius: 50%;
+   z-index: 5;
+}
+.avatarAddFile {
+   width: 94%;
+   height: 94%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgb(0, 0, 0, 0.5);
+   border-radius: 50%;
+   z-index: 6;
+   opacity: 0;
+}
+.input {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   cursor: pointer;
+   z-index: 9;
+}
+.uploadImage {
+   font-size: 45px;
+   color: rgb(36, 35, 35);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 8;
+}
+
+.avatarBg:hover .avatarAddFile {
+   opacity: 1;
+}
+
+.avatarPhoto {
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   border: 5px solid #fff;
+}
+
+.avatarLoading {
+   display: flex;
+   position: relative;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+/*STATUS*/
+.status {
+   margin: 0 auto;
+   font-family: "Comfortaa", cursive;
+   text-align: center;
+   font-size: 12px;
+   color: #242424af;
+   line-height: 1.7;
+}
+.status input {
+   width: 100%;
+   height: 35px;
+   border-radius: 6px;
+   border: 1.4px solid rgba(158, 158, 158, 0.473);
+   padding-left: 10px;
+}
+
+/*LINE TITLE*/
+.lineTitle {
+   height: 30px;
+   margin: 12px 0 5px 0;
+   position: relative;
+}
+.lineTitle span,
+.line {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.lineTitle span {
+   padding: 0 10px;
+   text-align: center;
+   color: #242424;
+   background-color: white;
+   font-size: 13px;
+   letter-spacing: 1px;
+}
+.line {
+   width: 100%;
+   height: 1.2px;
+   background-color: rgba(158, 158, 158, 0.473);
+}
+/*FOLLOW BLOCKS*/
+.followBlockContainer {
+   margin-top: 20px;
+}
+.followBlock {
+   border-bottom: 0.7px solid rgba(158, 158, 158, 0.473);
+   border-top: 0.7px solid rgba(158, 158, 158, 0.473);
+   padding: 12px;
+}
+.followBlock h5 {
+   font-family: "Comfortaa", cursive;
+   font-size: 14px;
+   font-weight: 700;
+   color: #242424;
+}
+.followBlock p {
+   text-align: center;
+   font-family: "Fredoka One", cursive;
+   font-size: 20px;
+   color: #e07850;
+   padding-top: 10px;
+}

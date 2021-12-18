@@ -1,0 +1,688 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+*,
+*:before,
+*:after {
+   padding: 0;
+   border: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+   margin: 0;
+   padding: 0;
+}
+html,
+body {
+   width: 100%;
+   height: 100%;
+}
+a {
+   text-decoration: none;
+   color: black;
+   transition: 0.4s ease;
+}
+a:hover {
+   color: rgba(0, 0, 0, 0.6);
+}
+body {
+   background-color: rgb(240, 234, 234);
+}
+
+.app-wrapper {
+   min-width: 100%;
+}
+button {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 14px;
+   padding: 5px 15px;
+   margin-left: 10px;
+   border-radius: 5px;
+   background-color: #e07850;
+   color: aliceblue;
+   letter-spacing: 1px;
+   transition: 0.4s ease;
+}
+button:hover {
+   color: aliceblue;
+   background-color: #dd6536;
+   cursor: pointer;
+}
+
+.information {
+   display: grid;
+   grid-template-columns: 300px 1fr;
+   grid-column-gap: 30px;
+   width: 94%;
+   margin: 0 auto;
+   padding-top: 80px;
+}
+
+/*PROFILE*/
+.profile-container {
+   padding: 40px 0;
+   margin-right: 20px;
+   height: auto;
+   position: relative;
+}
+.profile-container:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100px;
+   background-color: #e07850;
+}
+
+.profile-button {
+   margin-top: 20px;
+}
+.data input {
+   width: 100%;
+   height: 30px;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+}
+.data input[type="checkbox"] {
+   width: 20px;
+   height: 20px;
+   margin-left: 10px;
+}
+.data {
+   margin: 10px 0;
+}
+.data-item {
+   margin: 10px 0;
+   font-size: 14px;
+}
+.data-item b {
+   text-transform: capitalize;
+   letter-spacing: 1px;
+   display: block;
+   font-size: 15px;
+}
+.data-item p {
+   font-family: "Comfortaa", cursive;
+   text-align: center;
+   font-size: 12px;
+   color: #242424af;
+   line-height: 1.7;
+}
+.data-looking-job {
+   display: flex;
+   align-items: center;
+}
+
+.profile-avatarPhoto {
+   position: absolute;
+   top: -200px;
+   left: 0;
+}
+.profile-userInform {
+   margin: 20px 0 30px 0;
+   padding: 10px 0 0 0;
+}
+.profile-userInform h4 {
+   padding-top: 10px;
+}
+.link {
+   margin-top: -8px;
+   padding-bottom: 10px;
+   background-color: #fff;
+   color: #242424;
+   font-family: "Fredoka One", cursive;
+   text-align: center;
+   transition: 0.4s ease-in-out;
+}
+.link:hover {
+   color: rgba(97, 96, 96, 0.938);
+   cursor: pointer;
+}
+.data-details {
+   background-color: #fff;
+   margin-top: 20px;
+   padding: 0 0 20px 0;
+   border-top: 6px solid #dd6536;
+}
+.details-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+   grid-row-gap: 15px;
+   grid-column-gap: 10px;
+}
+.media-icons {
+   font-size: 28px;
+   margin-left: 15px;
+}
+.data-list {
+   background-color: #fff;
+   padding: 0 0 10px 0;
+   border-top: 6px solid #dd6536;
+   margin-top: -10px;
+}
+
+/*USER*/
+.user-container {
+   width: 100%;
+   height: auto;
+   padding: 0 20px 20px 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+   grid-column-gap: 20px;
+   grid-row-gap: 5px;
+}
+
+.user-items {
+   width: 100%;
+   height: 230px;
+   margin: 10px auto;
+   position: relative;
+   background-color: #fff;
+}
+.user-bg {
+   width: 100%;
+   height: 70px;
+   background: url("./pages/Users/user-bg.jpg");
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.user-photo {
+   position: absolute;
+   top: 20px;
+   left: 50%;
+   transform: translate(-50%);
+   font-size: 30px;
+   z-index: 5;
+   width: 90px;
+   height: 90px;
+   border-radius: 50%;
+   border: 4px solid #fff;
+}
+
+.user-inform {
+   text-align: center;
+   margin-top: 110px;
+}
+.user-inform .link {
+   font-size: 12px;
+   font-family: "Comfortaa", cursive;
+}
+
+.user-btn {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin-top: 20px;
+   margin-left: -10px;
+   padding: 10px;
+}
+.follow-btn button,
+.message-btn button {
+   width: 70px;
+   height: 26px;
+   font-size: 12px;
+   padding: 5px 0;
+   border-radius: 0px;
+}
+.message-btn button {
+   height: 30px;
+}
+.follow-btn button {
+   background-color: transparent;
+   outline: 2px solid #e07850;
+   color: #e07850;
+}
+.user-inform h2 {
+   font-family: "Fredoka One", cursive;
+   font-size: 16px;
+   letter-spacing: 1px;
+}
+.user-inform p {
+   font-size: 16px;
+   font-style: italic;
+   padding-top: 25px;
+}
+.user-location {
+   width: 30%;
+   margin-left: 50px;
+}
+.user-location h2 {
+   font-size: 18px;
+   margin-left: 100px;
+}
+.user-location h3 {
+   font-size: 16px;
+   margin-top: 70px;
+   margin-left: 100px;
+}
+
+.selectedPage {
+   font-weight: 700;
+   color: #933;
+   cursor: pointer;
+}
+.page {
+   margin: 0 auto;
+   color: #808080;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.page span {
+   padding: 0 10px 0 10px;
+   font-size: 16px;
+}
+.paginator-btn {
+   width: 35px;
+   height: 35px;
+   font-size: 20px;
+   background-color: black;
+   border-radius: 50%;
+   color: aliceblue;
+   letter-spacing: 1.3px;
+   text-align: center;
+   cursor: pointer;
+   transition: 0.4s ease;
+}
+
+.paginator-btn:active {
+   color: rgba(202, 200, 200, 0.712);
+}
+
+.preloader {
+   position: absolute;
+   top: 56%;
+   left: 55%;
+   width: 56px;
+   height: 56px;
+}
+/*DIALOG*/
+.dialog-container {
+   margin-top: 20px;
+   width: 100%;
+}
+.dialog-user {
+   width: 200px;
+   height: 100%;
+   background-color: #6555;
+}
+.dialoge {
+   width: 155px;
+   height: 30px;
+   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+   background-color: #fff;
+   padding: 10px;
+   padding-left: 25px;
+   margin-top: 2px;
+   font-size: 18px;
+   display: block;
+}
+
+.dialog-messages {
+   width: 650px;
+   height: auto;
+   margin-left: 30px;
+}
+.dialog-enter {
+   width: 600px;
+   margin-top: 20px;
+   display: flex;
+}
+.field {
+   width: 500px;
+   height: 50px;
+   margin-right: 20px;
+}
+.btn {
+   width: 80px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   border: 1px solid #000;
+   text-transform: uppercase;
+   margin-left: -1px;
+   margin-top: 7px;
+}
+
+.letter {
+   width: 320px;
+   height: auto;
+   margin-top: 10px;
+   border: 1px solid #cdcdcd;
+   padding: 10px;
+   display: flex;
+}
+.letter:nth-child(2n-1) {
+   margin-left: 380px;
+   background-color: #5888;
+   flex-direction: row-reverse;
+}
+
+.letter img {
+   widows: 40px;
+   height: 40px;
+   margin-right: 20px;
+}
+.letter:nth-child(2n-1).letter img {
+   margin-left: 20px;
+   margin-right: 0;
+}
+.text {
+   widows: auto;
+   padding-top: 10px;
+}
+
+/*MAIN*/
+.main-container {
+   width: 100%;
+   height: 30%;
+}
+.main-userData {
+   width: 70%;
+   margin: 0 auto;
+   height: 300px;
+   padding: 20px;
+   margin-top: 20px;
+   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.main-userData p {
+   text-align: center;
+}
+.main-user-details {
+   display: flex;
+}
+.main-user-details img {
+   width: 90%;
+   height: 70%;
+}
+
+.main-enteredField {
+   width: 50%;
+   margin-top: 30px;
+   display: flex;
+}
+.main-field {
+   width: 550px;
+   height: 35px;
+   resize: none;
+}
+.main-formBtn {
+   position: relative;
+   left: -360px;
+}
+.main-message {
+   width: 100%;
+   height: 50px;
+   resize: none;
+}
+
+.main-container button {
+   width: 70px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   border: 1px solid #000;
+   text-transform: uppercase;
+   margin-left: 400px;
+}
+.main-avatar {
+   width: 160px;
+   height: 160px;
+   margin-left: 41%;
+}
+
+.post {
+   width: 850px;
+   height: auto;
+   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+   margin-top: 17px;
+   display: flex;
+}
+
+.log {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   margin: 5px 0 0 10px;
+}
+.post span {
+   padding: 20px 0 0 10px;
+}
+/*USER_PROFILE*/
+.user-profile-container {
+   width: 70%;
+   margin-top: 50px;
+   margin: 0 auto;
+   padding: 10px 30px 30px 30px;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.user-profile-container h4 {
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 10px 0 30px 0;
+   font-size: 20px;
+}
+.user-profile-content {
+   display: grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: 35% 65%;
+   grid-column-gap: 5%;
+}
+.user-profile-content img {
+   width: 90%;
+}
+.user-profile-details h3 {
+   font-size: 25px;
+   color: rgba(75, 19, 206, 0.603);
+}
+
+.user-contacts {
+   font-size: 14px;
+}
+
+/*LOGIN*/
+.login-container {
+   width: 100%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.title {
+   font-size: 40px;
+   padding-bottom: 50px;
+   text-align: center;
+   letter-spacing: 4px;
+   color: black;
+   font-family: "Luckiest Guy", cursive;
+   text-shadow: 2px 7px 5px gray;
+}
+.block {
+   width: 90%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-areas: "login slider";
+   grid-template-columns: 37% 57%;
+   grid-template-rows: 1fr;
+   grid-column-gap: 6%;
+}
+.slider-container {
+   grid-area: slider;
+}
+.slider-image {
+   width: 450px;
+   height: 420px;
+   margin: 0 auto;
+}
+
+.formList {
+   grid-area: login;
+   width: 100%;
+   padding-top: 50px;
+   border-radius: 5px;
+   margin-top: 10px;
+   border-color: #599;
+   padding-left: 10px;
+   letter-spacing: 1.1px;
+}
+.formList div {
+   text-align: center;
+}
+.formList div input {
+   width: 70%;
+   height: 40px;
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.loginBtn {
+   width: 70%;
+   height: 35px;
+   letter-spacing: 1.7px;
+   background-color: rgba(75, 19, 206, 0.603);
+   color: aliceblue;
+   text-transform: uppercase;
+   font-size: 18px;
+   transition: 0.5s ease-out;
+   border-radius: 5px;
+}
+.loginBtn:hover {
+   background-color: black;
+   cursor: pointer;
+}
+.formList p {
+   font-size: 12px;
+   font-style: italic;
+   letter-spacing: 1px;
+   text-align: center;
+   padding-top: 5px;
+}
+.underline {
+   width: 30%;
+   border-top: 2px solid black;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+.remember {
+   display: flex;
+   justify-content: space-around;
+   width: 40%;
+   margin: 0 auto;
+   align-items: center;
+   padding: 10px;
+}
+.remember div div input {
+   width: 20px;
+   height: 20px;
+}
+
+.commonError {
+   border: 1px solid red;
+   padding: 3px;
+   text-align: center;
+   color: red;
+   font-size: 12px;
+   letter-spacing: 1.1px;
+}
+@media (max-width: 880px) {
+   .formList {
+      padding: 0;
+   }
+   .formList input {
+      margin-bottom: 40px;
+   }
+   .block {
+      width: 90%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-areas: "login";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+   }
+   .slider-container {
+      display: none;
+   }
+   .remember {
+      width: 25%;
+   }
+   .remember div input {
+      width: 40px;
+      height: 40px;
+      padding-right: 10px;
+   }
+}
+/*FORMS*/
+.form {
+   width: 190px;
+   height: 35px;
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   margin-top: 10px;
+   border-color: #599;
+   padding-left: 10px;
+   letter-spacing: 1.1px;
+}
+
+.formControl.error textarea,
+.formControl.error input {
+   border: 2px solid red;
+}
+
+.formControl.error span {
+   color: red;
+   margin-top: -10px;
+}
+
+textarea {
+   outline: none;
+}
+
+.user-form {
+   width: 60%;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   padding-bottom: 15px;
+}
+.user-form input[type="checkbox"] {
+   width: 20px;
+   height: 20px;
+}
+.user-form .search-friends {
+   width: 40%;
+   height: 30px;
+   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
+   padding-left: 10px;
+}
+.user-form button {
+   width: 17%;
+   margin-top: 4px;
+}
+.user-select {
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+   height: 30px;
+   border-radius: 4px;
+}
