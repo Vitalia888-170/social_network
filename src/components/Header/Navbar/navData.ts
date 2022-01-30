@@ -20,11 +20,6 @@ export const navData = [
       name: "News"
    },
    {
-      id: 5,
-      link: "/music",
-      name: "Music"
-   },
-   {
       id: 6,
       link: "/events",
       name: "Events"

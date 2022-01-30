@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 //@ts-ignore
-import styles from '../../pages/Chat/chat.module.css';
+import styles from '../../pages/Chats/chat.module.css';
 type PropsType = {
    onEmojiClick: (event: object, emojiObject: any) => void
 }

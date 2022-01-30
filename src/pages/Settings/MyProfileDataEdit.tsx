@@ -1,8 +1,9 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom';
 import { InjectedFormProps, reduxForm } from 'redux-form'
-import { CreateFields, FormValuesTypeKeys, Input, Textarea } from '../../../common/Forms/forms';
-import { required } from '../../../common/Utils/Validators/validators';
-import { ProfileType } from '../../../types/types';
+import { CreateFields, FormValuesTypeKeys, Input, Textarea } from '../../common/Forms/forms';
+import { required } from '../../common/Utils/Validators/validators';
+import { ProfileType } from '../../types/types';
 
 type ContactType = {
    github: string,
@@ -45,7 +46,7 @@ const MyProfileDataEditForm: React.FC<InjectedFormProps<FormValuesType, OwnProps
          </div>
          <div className='data'>
             <b>About me:</b><br />
-            {CreateFields("aboutMe", "aboutMe", Textarea, [required])}
+            {CreateFields("aboutMe", "aboutMe", Input, [required])}
          </div>
          <div className='data data-looking-job'>
             <b>Looking for a job:</b>
@@ -53,7 +54,7 @@ const MyProfileDataEditForm: React.FC<InjectedFormProps<FormValuesType, OwnProps
          </div>
          <div className='data'>
             <b>Job Description:</b><br />
-            {CreateFields("Job description", "lookingForAJobDescription", Textarea, [required])}
+            {CreateFields("Job description", "lookingForAJobDescription", Input, [required])}
          </div>
          <div className='data'>
             <b>Github:</b><br />
@@ -94,7 +95,6 @@ const MyProfileDataEditForm: React.FC<InjectedFormProps<FormValuesType, OwnProps
 const ReduxProfileDataForm = reduxForm<FormValuesType, OwnPropsType>({ form: 'profile' })(MyProfileDataEditForm);
 
 type PropsType = {
-   handleSave: () => void,
    saveProfileData: (profile: FormValuesType) => void,
    initialValues: any
 }
@@ -102,8 +102,6 @@ type PropsType = {
 const MyProfileDataEdit: React.FC<PropsType> = (props) => {
    const onSubmit = (formData: FormValuesType) => {
       props.saveProfileData(formData);
-      console.log(formData);
-      props.handleSave();
    }
    return (
       <div>

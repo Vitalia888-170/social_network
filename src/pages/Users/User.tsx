@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { UserType } from '../../types/types';
 //@ts-ignore
 import Avatar from './avatar.jpg'
+import { useDispatch } from 'react-redux';
+import { setDialogsThunk } from '../../redux/dialogs-reducer';
 
 
 type PropType = {
@@ -15,7 +17,10 @@ type PropType = {
 
 
 const User: React.FC<PropType> = ({ user, isAllowedFollow, usersUnfollowed, usersFollowed }) => {
-
+	let dispatch=useDispatch();
+const handleStartMessage=(userId:number)=>{
+dispatch(setDialogsThunk(userId))
+}
 	return (
 		<div className="user-items" key={user.id}>
 			<div className="user-bg"></div>
@@ -26,7 +31,7 @@ const User: React.FC<PropType> = ({ user, isAllowedFollow, usersUnfollowed, user
 				<h2>{user.name}</h2>
 				<div className="user-btn">
 					<div className="message-btn">
-						<button>Message</button>
+						<button onClick={()=>handleStartMessage(user.id)}>Message</button>
 					</div>
 					<div className="follow-btn">
 						{user.followed

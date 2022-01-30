@@ -62,7 +62,7 @@ export const getAuth = (state: AppStateType) => {
 	return state.auth.isAuth
 }
 
-export const getMessages = (state: AppStateType) => {
+export const getCommonChatMessages = (state: AppStateType) => {
 	return state.chat.messages
 }
 
@@ -70,4 +70,16 @@ export const getConnectStatus = (state: AppStateType) => {
 	return state.chat.connectingStatus
 }
 
+export const getTopNewsSelector=(state:AppStateType)=>{
+	return state.news.topNews
+}
+export const getDialogsSelector=(state:AppStateType)=>{
+	return state.dialogsPage.dialogs
+}
+export const getUserMessagesSelector=(state:AppStateType)=>{
+	return state.dialogsPage.messages
+}
+export const getDialogsUserIdSelector=(state:AppStateType)=>{
+	return state.dialogsPage.dialogsUserId
+}
 

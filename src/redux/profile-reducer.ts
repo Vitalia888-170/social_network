@@ -2,7 +2,7 @@ import { FormAction } from 'redux-form';
 import { resultCodeEnum } from '../api/api';
 import { userMainAPI } from '../api/main-api';
 import { profileAPI } from '../api/profile-api';
-import { FormValuesType } from '../components/Profile/MyProfileData/MyProfileDataEdit';
+import { FormValuesType } from '../pages/Settings/MyProfileDataEdit';
 import { PhotosType, ProfileType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-state.js';
 
@@ -75,7 +75,7 @@ export const savePhoto = (file: File): ThunkType => {
 
 export const saveProfileData = (profile: FormValuesType): ThunkType => {
 	return async (dispatch: any, getState: any) => {
-		const userId = getState().auth.userId;
+		const userId = 9725;
 		let response = await profileAPI.updateProfile(profile);
 		if (response.resultCode === resultCodeEnum.Success) {
 			dispatch(getMyProfile(userId));

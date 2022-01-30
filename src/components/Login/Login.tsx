@@ -5,9 +5,10 @@ import { required } from '../../common/Utils/Validators/validators';
 import { useDispatch, useSelector } from "react-redux";
 import { CreateFields, Input } from '../../common/Forms/forms';
 import { Login } from '../../redux/auth-reducer';
-import { Slider } from './Slider';
 import { FormValuesTypeKeys } from '../../common/Forms/forms';
 import { getCaptchaUrl } from '../../selectors/selectors';
+//@ts-ignore
+import loginImage from '../../images/loginimg.png'
 
 type LoginOwnPropsType = {
 	captchaUrl: string | null
@@ -30,7 +31,7 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, LoginOwnPropsTy
 				{CreateFields<LoginFormValuesTypeKeys>("Password", "password", Input, [required], { type: "password" })}
 			</div>
 			<div className="underline"></div>
-			<p>Enter and enjoy YoTalki</p>
+			<p>Enter and enjoy Developing Industry</p>
 			<div className="remember">
 				{CreateFields<LoginFormValuesTypeKeys>(undefined, "rememberMe", Input, [], { type: "checkbox" })}
 				<span>Remember me</span>
@@ -44,7 +45,7 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, LoginOwnPropsTy
 				{captchaUrl && CreateFields<LoginFormValuesTypeKeys>("Enter symbols", "captcha", Input, [required])}
 			</div>
 			<div>
-				<button className="loginBtn">Sign in</button>
+				<button>Sign in</button>
 			</div>
 		</form>
 	)
@@ -66,8 +67,8 @@ export const LoginPage: React.FC<PropsType> = () => {
 	return (
 		<div className="login-container">
 			<div className="block">
+				<img className="login-image" src={loginImage} alt="login image" />
 				<LoginReduxForm onSubmit={onSubmit} captchaUrl={captchaUrl} />
-				<Slider />
 			</div>
 		</div>
 	)

@@ -3,9 +3,10 @@ import { AiOutlinePaperClip, AiOutlineSend } from "react-icons/ai";
 import { HiOutlineEmojiHappy } from "react-icons/hi";
 import { useDispatch, useSelector } from 'react-redux';
 //@ts-ignore
-import styles from '../../pages/Chat/chat.module.css'
+import styles from '../../pages/Chats/chat.module.css'
 import { sendMessage } from '../../redux/chat-reducer';
-import { getConnectStatus } from '../../selectors/selectors';
+import { sendUserMessageThunk } from '../../redux/dialogs-reducer';
+import { getConnectStatus, getDialogsUserIdSelector } from '../../selectors/selectors';
 import { EmojiPicker } from '../EmojiPicker/EmojiPicker';
 type WebsocketType = 'pending' | 'ready';
 
@@ -14,6 +15,7 @@ export const AddMessageForm: React.FC = () => {
    const [isPannelOpen, setIsPannelOpen] = useState(false);
    const [chosenEmoji, setChosenEmoji] = useState(null);
    const status = useSelector(getConnectStatus);
+   const dialogId=useSelector(getDialogsUserIdSelector);
    const dispatch = useDispatch();
 
    const onEmojiClick = (event: object, emojiObject: any) => {
@@ -36,7 +38,11 @@ export const AddMessageForm: React.FC = () => {
       if (!message) {
          return;
       }
-      dispatch(sendMessage(message));
+      if(dialogId===0){
+         dispatch(sendMessage(message));
+      }else{
+         dispatch(sendUserMessageThunk(dialogId, message))
+      }
       setMessage('');
    }
    const openEmojiPannel = () => {

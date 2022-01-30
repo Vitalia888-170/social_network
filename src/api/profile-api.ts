@@ -1,4 +1,4 @@
-import { FormValuesType } from '../components/Profile/MyProfileData/MyProfileDataEdit';
+import { FormValuesType } from '../pages/Settings/MyProfileDataEdit';
 import { PhotosType, ProfileType } from '../types/types';
 import { instance, ResponseType } from './api';
 type PutPhotoType = {

@@ -12,20 +12,16 @@ import Settings from './pages/Settings/Settings';
 import { LoginPage } from './components/Login/Login';
 import './App.css';
 import { getAuth } from './selectors/selectors';
-
-const ChatContainer = React.lazy(() => import('./pages/Chat/Chat'));
+//@ts-ignore
+const DialogContainer = React.lazy(() => import('./pages/Chats/Chat'));
 //@ts-ignore
 const UserProfileContainer = React.lazy(() => import('./components/UserProfile/UserProfileContainer'));
 //@ts-ignore
 const MainContainer = React.lazy(() => import('./pages/Main/Main'));
-const SuspenceChat = withSuspense(ChatContainer);
+const SuspenceDialogs = withSuspense(DialogContainer);
 const UserProfile = withSuspense(UserProfileContainer);
 const Main = withSuspense(MainContainer);
 
-
-
-// type MapPropsType = ReturnType<typeof mapStateToProps>
-// type DispatchPropsType = {}
 let data = localStorage.getItem('isAuth');
 const App = () => {
   const auth = useSelector(getAuth);
@@ -39,12 +35,11 @@ const App = () => {
     return (
       <div className="app-wrapper">
         <Header />
-        {/* <div className="content-image"></div> */}
         <div className="information">
           <ProfileContainer />
           <div className="container">
             <Route path="/chat"
-              render={() => <SuspenceChat />} />
+              render={() => <SuspenceDialogs />} />
             <Route path="/main"
               render={() => <Main />} />
             <Route path='/searching' render={() => <UserPage />} />

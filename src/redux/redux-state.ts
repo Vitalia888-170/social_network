@@ -7,6 +7,7 @@ import profileReducer from './profile-reducer';
 import thunkMiddleware, { ThunkAction } from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 import chatReducer from "./chat-reducer";
+import newsReducer from "./news-reducer";
 
 
 
@@ -17,7 +18,8 @@ let rootReducers = combineReducers({
 	auth: authReducer,
 	profile: profileReducer,
 	form: formReducer,
-	chat: chatReducer
+	chat: chatReducer,
+	news:newsReducer
 });
 
 let store = createStore(rootReducers, applyMiddleware(thunkMiddleware));

@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 //@ts-ignore
-import styles from '../../pages/Chat/chat.module.css'
+import styles from '../../pages/Chats/chat.module.css'
 //@ts-ignore
 import avatar from '../../pages/Users/avatar.jpg';
-import { useSelector } from 'react-redux';
-import { getMessages } from '../../selectors/selectors';
 
+type PropsType={
+   messages:any
+}
 
-export const Messages: React.FC = () => {
-   console.log('messages');
-   const messages = useSelector(getMessages);
+export const Messages: React.FC<PropsType> = ({messages}) => {
+   console.log(messages);
    const messageEmptyRef = useRef<HTMLDivElement>(null);
    const [autoScrollActive, setAutoScrollActive] = useState(false);
 
@@ -34,18 +34,20 @@ export const Messages: React.FC = () => {
          return <img src={userAvatar} alt="ava" />
       }
    }
-   return (
-      <div className={styles.messageBlock} onScroll={scrollHandler}>
-         {messages.map((message) => {
-            return <div className={message.userId === 9725 ? styles.myMessageContainer : styles.messageContainer} key={message.id}>
-               {setImage(message.photo)}
-               <div className={styles.messageContent}>
-                  <h4>{message.userName}</h4>
-                  <p>{message.message}</p>
-               </div>
+   if(messages.length > 0){
+      return <div className={styles.messageBlock} onScroll={scrollHandler}>
+      {messages.map((message:any) => {
+         return <div className={message.userId === 9725 ? styles.myMessageContainer : styles.messageContainer} key={message.id}>
+            {setImage(message.photo)}
+            <div className={styles.messageContent}>
+               <h4>{message.userName}</h4>
+               <p>{message.message}</p>
             </div>
-         })}
-         <div ref={messageEmptyRef}></div>
-      </div>
-   )
+         </div>
+      })}
+      <div ref={messageEmptyRef}></div>
+   </div>
+   }else{
+      return <p>No messages yet</p>
+   }
 }
