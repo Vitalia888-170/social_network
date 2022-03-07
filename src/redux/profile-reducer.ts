@@ -58,6 +58,7 @@ export const updateStatusThunk = (status: string): ThunkType => {
 	}
 }
 export const getMyProfile = (userId: number): ThunkType => {
+	console.log(userId);
 	return async (dispatch) => {
 		let data = await userMainAPI.getUserProfile(userId);
 		dispatch(actions.myProfile(data));

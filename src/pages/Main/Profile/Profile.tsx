@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import '../../App.css';
 //@ts-ignore
-import { AvatarMainInform } from '../Avatar/Avatar';
-import MyProfileData from '../Profile/MyProfileData/MyProfileData';
+import styles from '../main.module.css';
+//@ts-ignore
+import { AvatarMainInform } from '../../../components/Avatar/Avatar';
+import MyProfileData from './MyProfileData/MyProfileData';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProfile } from '../../selectors/selectors';
-import { getStatusThunk, getMyProfile, saveProfileData } from '../../redux/profile-reducer';
+import { getProfile } from '../../../selectors/selectors';
+import { getStatusThunk, getMyProfile} from '../../../redux/profile-reducer';
 
 
 const Profile: React.FC = () => {
@@ -19,16 +20,16 @@ const Profile: React.FC = () => {
 	}
 
 	useEffect(() => {
+		console.log('set')
 		updateProfile();
 	}, []);
 
 	return (
-		<div className="profile-container">
+		<div className={styles.container}>
 			<AvatarMainInform
 				photos={profile ? profile.photos : null}
 			/>
-			<p className="link" onClick={() => setIsViewDetails(!isViewDetails)}>View details</p>
-				<div className="profile-userInform">
+				<div className={styles.userInform}>
 						<MyProfileData profile={profile}/>
 					</div>
 		</div>

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { getUserProfile } from '../../redux/main-reducer';
+import { getUserProfile } from '../../redux/userProfile-reducer';
 import { useDispatch, useSelector } from "react-redux";
 import { RouteComponentProps, useHistory, withRouter } from 'react-router-dom';
 import Preloader from '../../common/Preloader/Preloader';
-import UserProfile from '../../components/UserProfile/UserProfile';
+import UserProfile from './UserProfile';
 import { getCurrentUserProfile } from '../../selectors/selectors';
 
 type PathParamsType = {

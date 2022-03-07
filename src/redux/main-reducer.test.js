@@ -1,4 +1,4 @@
-import mainReducer, { actions } from './main-reducer';
+import mainReducer, { actions } from './post-reducer';
 
 
 let state;

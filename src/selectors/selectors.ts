@@ -42,7 +42,7 @@ export const getCaptchaUrl = (state: AppStateType) => {
 	return state.auth.url
 }
 export const getPosts = (state: AppStateType) => {
-	return state.mainPage.posts
+	return state.post.posts
 }
 export const getStatus = (state: AppStateType) => {
 	return state.profile.status
@@ -56,7 +56,7 @@ export const getProfile = (state: AppStateType) => {
 }
 
 export const getCurrentUserProfile = (state: AppStateType) => {
-	return state.mainPage.profile
+	return state.userProfile.profile
 }
 export const getAuth = (state: AppStateType) => {
 	return state.auth.isAuth

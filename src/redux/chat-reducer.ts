@@ -71,7 +71,7 @@ export const stopGetMessage = (): ThunkType => {
 	}
 }
 
-export const sendMessage = (message: string): ThunkType => {
+export const sendMessage = (id:number, message: string): ThunkType => {
 	return async () => {
 		chatAPI.send(message);
 	}

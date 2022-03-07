@@ -1,35 +1,30 @@
-import React from 'react';
-import Post from './Post/Post';
-import '../../App.css';
-import Preloader from '../../common/Preloader/Preloader';
-import PostFormRedux from './MainForm/MainForm';
-import { AddMessageBodyType } from './MainForm/MainForm';
-import { MessagesType } from '../../types/types';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from '../../selectors/selectors';
-import { actions } from '../../redux/main-reducer';
+import React from "react";
+import { useSelector } from "react-redux";
+import { getPosts } from "../../selectors/selectors";
+import { actions } from "../../redux/post-reducer";
+import { AddMessageForm } from "../../components/AddMessageForm/AddMessageForm";
+import Profile from "./Profile/Profile";
+const styles = require("./main.module.css");
 
 
 const Main: React.FC = () => {
-	const posts = useSelector(getPosts);
-	const dispatch = useDispatch();
-	let postsElem = posts.map(post => <Post key={post.id} message={post.message} />);
+  const posts = useSelector(getPosts);
+	console.log(posts);
 
-
-	let addNewPost = (values: AddMessageBodyType) => {
-		dispatch(actions.addPost(values.newMessageBody));
-	}
-	return (
-		<div className="main-container">
-			<div>
-				<PostFormRedux onSubmit={addNewPost} />
-			</div>
-			<div className="posts">
-				{postsElem}
-			</div>
-		</div>
-	);
-}
-
+  return (
+    <div className={styles.mainContainer}>
+      <Profile />
+      <div className={styles.postContainer}>
+        <div className={styles.content}>
+          <AddMessageForm
+					callback={actions.addPost}
+					placeholder="Share your thoughts..."
+					btnTitle="Add post"
+					/>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Main;

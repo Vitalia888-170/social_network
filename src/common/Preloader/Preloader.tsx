@@ -1,6 +1,6 @@
 import React from 'react';
 //@ts-ignore
-import PreloaderImage from './preloader.svg';
+import PreloaderImage from './preloader.gif';
 type PropsType = {
 	isFetching: boolean
 }

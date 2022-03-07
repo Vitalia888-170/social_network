@@ -38,7 +38,7 @@ let dialogReducer = (state = initialState, action: ActionsTypes): InitialStateTy
     case "SET-DIALOGS":
       return {
         ...state,
-        dialogs: [...state.dialogs, ...action.dialogList],
+        dialogs: action.dialogList ? [...state.dialogs, ...action.dialogList] : [state.dialogs[0]]
       }
         case "SET-ACTUAL-USERID":
           return {

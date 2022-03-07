@@ -4,7 +4,7 @@ import { Provider, connect, useSelector } from "react-redux";
 import store from './redux/redux-state';
 import { withSuspense } from './hoc/withSuspense';
 import { Header } from './components/Header/Header';
-import ProfileContainer from './components/Profile/Profile';
+import ProfileContainer from './pages/Main/Profile/Profile';
 import { UserPage } from './pages/Users/UserPage';
 import Music from './pages/Music/Music';
 import News from './pages/News/News';
@@ -35,8 +35,6 @@ const App = () => {
     return (
       <div className="app-wrapper">
         <Header />
-        <div className="information">
-          <ProfileContainer />
           <div className="container">
             <Route path="/chat"
               render={() => <SuspenceDialogs />} />
@@ -48,7 +46,6 @@ const App = () => {
             <Route path="/settings" render={() => <Settings />} />
             <Route path="/user-profile/:userId?" render={() => <UserProfile />} />
           </div>
-        </div>
       </div>
     )
   } else {

@@ -1,0 +1,122 @@
+/*PROFILE*/
+.container {
+  width: 30%;
+  margin-right: 20px;
+  height: auto;
+  position: relative;
+}
+.container:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #e07850;
+}
+.postContainer{
+  width: 70%;
+}
+.content{
+  width: 80%;
+  margin: 0 auto;
+}
+.button {
+  margin-top: 20px;
+}
+
+.dataContainer input {
+  width: 80%;
+  height: 35px;
+  border-radius: 4px;
+}
+.dataContainer input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.dataContainer {
+  margin: 10px 0;
+}
+.item {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.item b {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: block;
+  font-size: 15px;
+}
+.item p {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  font-size: 12px;
+  color: #242424af;
+  line-height: 1.7;
+}
+.userInform {
+  margin: 20px 0 30px 0;
+  padding: 10px 0 0 0;
+}
+.userInform h4 {
+  padding-top: 10px;
+}
+.link {
+  margin-top: -8px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  color: #242424;
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+.link:hover {
+  color: rgba(97, 96, 96, 0.938);
+  cursor: pointer;
+}
+.details {
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 0 0 20px 0;
+  border-top: 6px solid #dd6536;
+}
+.detailsContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-row-gap: 15px;
+  grid-column-gap: 10px;
+}
+.mediaIcons {
+  font-size: 28px;
+  margin-left: 15px;
+}
+.list {
+  background-color: #fff;
+  padding: 0 0 10px 0;
+  border-top: 6px solid #dd6536;
+  margin-top: -10px;
+}
+/*MAIN*/
+.mainContainer {
+width: 100%;
+display: flex;
+}
+
+.post {
+  width: 850px;
+  height: auto;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+  margin-top: 17px;
+  display: flex;
+}
+
+.log {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px 0 0 10px;
+}
+.post span {
+  padding: 20px 0 0 10px;
+}

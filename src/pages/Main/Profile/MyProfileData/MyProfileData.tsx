@@ -1,8 +1,9 @@
 import React, { ChangeEvent } from 'react';
-import { ProfileType } from '../../../types/types';
-import { LineTitle } from '../../Avatar/Avatar';
-import  { FormValuesType } from '../../../pages/Settings/MyProfileDataEdit';
-import { IconsGenerator } from '../../../common/IconsGenerator/IconsGenerator';
+import { ProfileType } from '../../../../types/types';
+import { LineTitle } from '../../../../components/Avatar/Avatar';
+import { IconsGenerator } from '../../../../common/IconsGenerator/IconsGenerator';
+//@ts-ignore
+import styles from '../../main.module.css'
 
 type PropsType = {
 	profile: ProfileType | null
@@ -51,25 +52,25 @@ class MyProfileData extends React.Component<PropsType, StateType> {
 		//@ts-ignore
 		const { lookingForAJob, contacts, aboutMe, lookingForAJobDescription } = this.state.profile;
 		return (
-			<div className='user-profile-data-container'>
+			<div className={styles.dataContainer}>
 				<>
-							<div className="data-list">
-								<div className='data-item'>
+							<div className={styles.list}>
+								<div className={styles.item}>
 									<LineTitle>About me</LineTitle>
 									<p> {aboutMe}</p>
 								</div>
-								<div className='data-item'>
+								<div className={styles.item}>
 									<LineTitle>Looking for a job</LineTitle>
 									<p> {lookingForAJob ? 'yes' : 'no'}</p>
 								</div>
-								<div className='data-item'>
+								<div className={styles.item}>
 									<LineTitle>Job description</LineTitle>
 									<p> {lookingForAJobDescription}</p>
 								</div>
 							</div>
-							<div className="data-details">
+							<div className={styles.details}>
 								<LineTitle>Contacts</LineTitle>
-								<div className="details-content">
+								<div className={styles.detailsContent}>
 									{
 										Object.entries(contacts).map(([title, src], index) => {
 											return <a key={index} href={`${src}`}>
